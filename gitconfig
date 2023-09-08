@@ -1,9 +1,6 @@
-[http]
-	sslVerify = false
-	proxy = 127.0.0.1:7890
 [user]
-	email = 904016301@qq.com
-	name = AtaraxiaZ
+	email = zheli@bytedance.com
+	name = zheli
 [core]
 	editor = vim
 [alias]

@@ -1,19 +1,27 @@
 #! /bin/bash
 # This scipts is to setup the symbolic link
 
-dotfiles="bashrc aliases path exports func extra zshrc vimrc vim gitconfig gitignore_global"
+dotfiles="bashrc aliases yabairc skhdrc path exports func extra zshrc vimrc vim gitconfig gitignore_global"
 files="development"
 
 for file in $dotfiles; do
-	[[ ! -e ~/."$file" ]] && ln -s ~/dotfiles/"$file" ~/."$file"
+	[[ ! -L ~/."$file" ]] && ln -s ~/dotfiles/"$file" ~/."$file"
 done
 
 for file in $files; do
 	[[ ! -f ~/"$file" ]] && ln -s ~/dotfiles/"$file" ~/"$file"
 done
 
-i3config="i3config"
-[ ! -f ~/.config/i3/config ] && ln -s ~/dotfiles/$i3config ~/.config/i3/config
+
+# we use oh my zsh
+if [[ ! -d ~/.oh-my-zsh ]]; then
+    cd || exit
+    wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+    sh install.sh
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+fi
 
 # we use oh my tmux
 if [[ ! -d ~/.tmux ]]; then
