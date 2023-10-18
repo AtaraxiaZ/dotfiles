@@ -3,6 +3,7 @@
 	name = zheli
 [core]
 	editor = vim
+    excludesfile = ~/.gitignore_global
 [alias]
 	graph = log --all --graph --decorate --oneline
 [difftool]
