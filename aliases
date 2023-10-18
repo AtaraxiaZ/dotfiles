@@ -1,5 +1,4 @@
 # vim and neovim
-alias nvim="$HOME/opt/nvim.appimage"
 alias v="vim"
 alias nv="nvim"
 alias nvconf="nvim ~/.config/nvim/init.lua"
@@ -38,3 +37,4 @@ alias howdoi="howdoi -a -c"
 alias bat="batcat"
 alias trans="trans -brief -t zh -shell"
 alias menyoki="menyoki record"
+alias tldr="tldr -t base16"
