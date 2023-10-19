@@ -8,6 +8,10 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+# some shortcut for dirctory
+alias dow='cd ~/Downloads'
+alias doc='cd ~/Documents'
+alias p='cd ~/projects'
 
 # Synopsys
 alias lmli="/tools/Synopsys/SCL2018/scl/2018.06/linux64/bin/lmgrd -c /usr/stone/software/License/Synopsys.dat"
