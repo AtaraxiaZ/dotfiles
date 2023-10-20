@@ -22,6 +22,11 @@
     "key": "ctrl+e",
     "when": "editorTextFocus"
   },
+  {
+    "key": "g r",
+    "command": "editor.action.goToReferences",
+    "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+  },
   // 文件管理器操作
   {
     "command": "explorer.newFile",
@@ -53,6 +58,7 @@
     "key": "z",
     "when": "filesExplorerFocus && !inputFocus"
   },
+  // 移动操作
   {
     "command": "workbench.action.previousEditorInGroup",
     "key": "shift+h",

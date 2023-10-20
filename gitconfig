@@ -1,6 +1,6 @@
 [user]
-	email = zheli@bytedance.com
-	name = zheli
+	email = 904016301@qq.com
+	name = Zhe Li
 [core]
 	editor = vim
     excludesfile = ~/.gitignore_global
@@ -14,3 +14,5 @@
     tool = vimdiff
 [difftool "nvimdiff"]
     cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+[credential]
+	useHttpPath = true

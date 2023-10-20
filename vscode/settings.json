@@ -18,7 +18,7 @@
     "source.addMissingImports": true,
     "source.organizeImports": true
   },
-  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorSmoothCaretAnimation": "off",
   "editor.cursorSurroundingLines": 5,
   "editor.fontFamily": "JetBrainsMono Nerd Font",
   "editor.fontLigatures": true,
@@ -198,7 +198,7 @@
   ],
   "vim.useSystemClipboard": true,
   "workbench.colorTheme": "Everforest Light",
-  "workbench.iconTheme": "material-icon-theme",
+  "workbench.iconTheme": "vscode-icons",
   "workbench.settings.editor": "json",
   "workbench.startupEditor": "readme",
   "zenMode.hideLineNumbers": false,
