@@ -8,6 +8,8 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+# some cd aliases
+alias p='cd ~/Documents/FPGA/vivado-project/'
 
 # Synopsys
 alias lmli="/tools/Synopsys/SCL2018/scl/2018.06/linux64/bin/lmgrd -c /usr/stone/software/License/Synopsys.dat"
@@ -38,3 +40,5 @@ alias bat="batcat"
 alias trans="trans -brief -t zh -shell"
 alias menyoki="menyoki record"
 alias tldr="tldr -t base16"
+alias less="less -N"
+alias docker="sudo docker"

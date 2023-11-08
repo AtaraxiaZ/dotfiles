@@ -2,6 +2,9 @@
 # export http_proxy='127.0.0.1:7890'
 # export https_proxy='127.0.0.1:7890'
 
+# editor
+export VISUAL='vim'
+
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -9,10 +12,11 @@ export NVM_DIR="$HOME/.nvm"
 
 # Xilinx
 # 下面这2条会将所有xilinx的那一套编译链加入$PATH中，导致Verilator无法编译
-# source /tools/Xilinx/Vivado/2021.2/settings64.sh
+source /tools/Xilinx/Vivado/2023.1/settings64.sh
 # source /tools/Xilinx/xilinx-versal-common-v2021.2/versal-common/environment-setup-cortexa72-cortexa53-xilinx-linux
-# source /tools/Xilinx/petalinux-221/settings.sh
-export PLATFORM_REPO_PATHS=/opt/xilinx/platforms
+# source /tools/Xilinx/petalinux-221/settings.sh > /dev/null
+# export PLATFORM_REPO_PATHS=/opt/xilinx/platforms
+source /fpga/tools/petalinux/v23.1/settings.sh > /dev/null 2>&1
 
 # Synopsys
 #export export SYNOPSYS="/tools/Synopsys"

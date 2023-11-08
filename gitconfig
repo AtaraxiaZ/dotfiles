@@ -1,11 +1,21 @@
+[http]
+	sslVerify = false
+    # proxy = 127.0.0.1:7890
 [user]
-	email = zheli@bytedance.com
-	name = zheli
+	email = ataraxialex@gmail.com
+	name = Zhe Li
 [core]
 	editor = vim
     excludesfile = ~/.gitignore_global
 [alias]
 	graph = log --all --graph --decorate --oneline
+	unstage = reset HEAD --
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	last = log -1 HEAD
+	visual = !gitk
 [difftool]
     # disables the annoying prompt so whenever you hit 
     # git difftool it will automatically launch the difftool
@@ -14,3 +24,5 @@
     tool = vimdiff
 [difftool "nvimdiff"]
     cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+[pull]
+	rebase = true
