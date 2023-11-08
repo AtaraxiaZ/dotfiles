@@ -3,6 +3,8 @@
 
 dotfiles="bashrc aliases yabairc skhdrc path exports func extra zshrc vimrc vim gitconfig gitignore_global"
 files="development"
+vscode="keybindings settings"
+vscodepath="$HOME/Library/Application Support/Code/User"
 
 for file in $dotfiles; do
 	[[ ! -L ~/."$file" ]] && ln -s ~/dotfiles/"$file" ~/."$file"
@@ -11,7 +13,6 @@ done
 for file in $files; do
 	[[ ! -f ~/"$file" ]] && ln -s ~/dotfiles/"$file" ~/"$file"
 done
-
 
 # we use oh my zsh
 if [[ ! -d ~/.oh-my-zsh ]]; then
@@ -23,11 +24,15 @@ if [[ ! -d ~/.oh-my-zsh ]]; then
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 fi
 
+for file in $vscode; do
+	[[ ! -L "$vscodepath/$file".json ]] && ln -s ~/dotfiles/vscode/"$file".json "$vscodepath/$file".json
+done
+
+
 # we use oh my tmux
 if [[ ! -d ~/.tmux ]]; then
-    cd || exit
-    git clone https://github.com/gpakosz/.tmux.git
-    ln -s -f .tmux/.tmux.conf .
-    ln -s -f dotfiles/tmux.conf.local ./.tmux.conf.local
+	cd || exit
+	git clone https://github.com/gpakosz/.tmux.git
+	ln -s -f .tmux/.tmux.conf .
+	ln -s -f dotfiles/tmux.conf.local ./.tmux.conf.local
 fi
-

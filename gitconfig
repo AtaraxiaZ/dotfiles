@@ -2,7 +2,7 @@
 	sslVerify = false
     # proxy = 127.0.0.1:7890
 [user]
-	email = ataraxialex@gmail.com
+	email = 904016301@qq.com
 	name = Zhe Li
 [core]
 	editor = vim
@@ -26,3 +26,5 @@
     cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 [pull]
 	rebase = true
+[credential]
+	useHttpPath = true
