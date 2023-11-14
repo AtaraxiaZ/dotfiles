@@ -1,6 +1,8 @@
 #! /bin/bash
 # This scipts is to setup the symbolic link
 
+bash ~/dotfiles/requirments.sh
+
 dotfiles="bashrc aliases yabairc skhdrc path exports func extra zshrc vimrc vim gitconfig gitignore_global"
 files="development"
 vscode="keybindings settings"

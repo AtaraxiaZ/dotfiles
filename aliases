@@ -1,5 +1,6 @@
 # vim and neovim
 alias v="vim"
+alias nvim="~/opt/nvim"
 alias nv="nvim"
 alias nvconf="nvim ~/.config/nvim/init.lua"
 
@@ -46,3 +47,4 @@ alias tldr="tldr -t base16"
 alias less="less -N"
 alias docker="sudo docker"
 alias activate="source ~/.virtualenvs/cocotb/bin/activate"
+alias aliyun="ssh -N -R 10024:localhost:22 root@aliyun &"
