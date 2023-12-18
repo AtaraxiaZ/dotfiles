@@ -1,4 +1,4 @@
 #! /usr/bash
 
-sudo apt install -y wget tmux fd-find docker tldr vim
+sudo apt install -y zsh wget tmux fd-find docker tldr vim
     

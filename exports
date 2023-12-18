@@ -8,7 +8,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # Xilinx
 # 下面这2条会将所有xilinx的那一套编译链加入$PATH中，导致Verilator无法编译
-source /tools/Xilinx/Vivado/2023.1/settings64.sh
+source /tools/Xilinx/Vivado/2023.1/settings64.sh > /dev/null 2>&1
 # source /tools/Xilinx/xilinx-versal-common-v2021.2/versal-common/environment-setup-cortexa72-cortexa53-xilinx-linux
 # source /tools/Xilinx/petalinux-221/settings.sh > /dev/null
 # export PLATFORM_REPO_PATHS=/opt/xilinx/platforms
