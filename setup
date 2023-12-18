@@ -3,7 +3,7 @@
 
 bash ~/dotfiles/requirments.sh
 
-dotfiles="bashrc aliases yabairc skhdrc path exports func extra zshrc vimrc vim gitconfig gitignore_global"
+dotfiles="bashrc aliases yabairc skhdrc path exports func extra zshrc vimrc vim gitconfig gitignore_global gdbinit"
 files="development"
 vscode="keybindings settings"
 vscodepath="$HOME/Library/Application Support/Code/User"

@@ -14,6 +14,8 @@ alias dow='cd ~/Downloads'
 alias doc='cd ~/Documents'
 alias p='cd ~/projects'
 alias bin='cd ~/bin'
+alias note='cd ~/Nutstore\ Files/Typora/'
+alias tmp='cd /tmp'
 
 # Synopsys
 alias lmli="/tools/Synopsys/SCL2018/scl/2018.06/linux64/bin/lmgrd -c /usr/stone/software/License/Synopsys.dat"
@@ -48,3 +50,4 @@ alias less="less -N"
 alias docker="sudo docker"
 alias activate="source ~/.virtualenvs/cocotb/bin/activate"
 alias aliyun="ssh -N -R 10024:localhost:22 root@aliyun &"
+alias outline="Outline &"

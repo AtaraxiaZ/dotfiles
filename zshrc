@@ -118,3 +118,6 @@ export OPENAI_KEY=
 export PATH=$PATH:/usr/local/bin
 export OPENAI_KEY=
 export PATH=$PATH:/usr/local/bin
+
+# opam configuration
+[[ ! -r /home/zhe/.opam/opam-init/init.zsh ]] || source /home/zhe/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
