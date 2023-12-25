@@ -7,7 +7,7 @@ fi
 
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
-for file in ~/.{path,exports,aliases,func,extra}; do
+for file in ~/.{exports,aliases,func,extra}; do
   [ -r "$file" ] && source "$file"
 done
 unset file
@@ -82,7 +82,7 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting fzf-zsh-plugin)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -114,10 +114,7 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-export OPENAI_KEY=
-export PATH=$PATH:/usr/local/bin
-export OPENAI_KEY=
-export PATH=$PATH:/usr/local/bin
+export OPENAI_API_KEY=""
 
 # opam configuration
 [[ ! -r /home/zhe/.opam/opam-init/init.zsh ]] || source /home/zhe/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
