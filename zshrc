@@ -118,3 +118,5 @@ export OPENAI_API_KEY=""
 
 # opam configuration
 [[ ! -r /home/zhe/.opam/opam-init/init.zsh ]] || source /home/zhe/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

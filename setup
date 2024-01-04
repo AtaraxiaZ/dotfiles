@@ -4,7 +4,7 @@
 bash ~/dotfiles/requirments.sh
 
 dotfiles="bashrc aliases zprofile yabairc skhdrc exports func extra \
-    zshrc vimrc vim gitconfig gitignore_global gdbinit"
+    zshrc vimrc vim gitconfig gitignore_global gdbinit condarc"
 files="development"
 vscode="keybindings settings"
 vscodepath="$HOME/Library/Application Support/Code/User"
