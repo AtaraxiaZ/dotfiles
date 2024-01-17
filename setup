@@ -1,7 +1,7 @@
 #! /bin/bash
 # This scipts is to setup the symbolic link
 
-bash ~/dotfiles/requirments.sh
+bash $HOME/dotfiles/requirments.sh
 
 dotfiles="bashrc aliases zprofile yabairc skhdrc exports func extra \
     zshrc vimrc vim gitconfig gitignore_global gdbinit condarc"
@@ -10,34 +10,34 @@ vscode="keybindings settings"
 vscodepath="$HOME/Library/Application Support/Code/User"
 
 for file in $dotfiles; do
-	[[ ! -L ~/."$file" ]] && ln -s ~/dotfiles/"$file" ~/."$file"
+	[[ ! -L $HOME/."$file" ]] && ln -s $HOME/dotfiles/"$file" $HOME/."$file"
 done
 
 for file in $files; do
-	[[ ! -f ~/"$file" ]] && ln -s ~/dotfiles/"$file" ~/"$file"
+	[[ ! -f $HOME/"$file" ]] && ln -s $HOME/dotfiles/"$file" $HOME/"$file"
 done
 
 if [[ -e $vscodepath ]]; then
 	for file in $vscode; do
-		[[ ! -L "$vscodepath/$file".json ]] && ln -s ~/dotfiles/vscode/"$file".json "$vscodepath/$file".json
+		[[ ! -L "$vscodepath/$file".json ]] && ln -s $HOME/dotfiles/vscode/"$file".json "$vscodepath/$file".json
 	done
 fi
 
 # we use oh my zsh
-if [[ ! -d ~/.oh-my-zsh ]]; then
+if [[ ! -d $HOME/.oh-my-zsh ]]; then
 	cd || exit
-	[[ -e ~/install.sh ]] || wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+	[[ -e $HOME/install.sh ]] || wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 	sh install.sh
 else
 	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"/themes/powerlevel10k
 	git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"/plugins/zsh-autosuggestions
 	git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"/plugins/zsh-syntax-highlighting
-	git clone --depth=1 https://github.com/unixorn/fzf-zsh-plugin.git "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}"/plugins/fzf-zsh-plugin
-	[[ -e ~/install.sh ]] && rm ~/install.sh
+	git clone --depth=1 https://github.com/unixorn/fzf-zsh-plugin.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"/plugins/fzf-zsh-plugin
+	[[ -e $HOME/install.sh ]] && rm $HOME/install.sh
 fi
 
 # we use oh my tmux
-if [[ ! -d ~/.tmux ]]; then
+if [[ ! -d $HOME/.tmux ]]; then
 	cd || exit
 	git clone https://github.com/gpakosz/.tmux.git
 	ln -s -f .tmux/.tmux.conf .

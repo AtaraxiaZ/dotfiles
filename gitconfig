@@ -6,6 +6,7 @@
 [core]
 	editor = vim
     excludesfile = ~/.gitignore_global
+	autocrlf = input
 [alias]
 	graph = log --all --graph --decorate --oneline
 	unstage = reset HEAD --
