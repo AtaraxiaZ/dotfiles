@@ -13,6 +13,10 @@ source /tools/Xilinx/Vivado/2023.1/settings64.sh > /dev/null 2>&1
 # source /tools/Xilinx/petalinux-221/settings.sh > /dev/null
 # export PLATFORM_REPO_PATHS=/opt/xilinx/platforms
 source /fpga/tools/petalinux/v23.1/settings.sh > /dev/null 2>&1
+# If you need aarch64-xilinx toolchains, uncomment the following two lines
+# Caution! Verilator may not find perl correctly when source this script
+# unset LD_LIBRARY_PATH
+# source /opt/petalinux/2023.1/environment-setup-cortexa72-cortexa53-xilinx-linux
 export XILINXD_LICENSE_FILE=27090@eda-lic-45.platform.nlabct.net
 
 # Synopsys
@@ -25,15 +29,13 @@ export VCS_HOME="/tools/Synopsys/VCS2018/vcs/O-2018.09-SP2"
 # export VCS_ARCH_OVERRIDE="linux"
 # export PATH="/tools/Synopsys/verdi/verdi/Verdi_O-2018.09-SP2/bin:"$PATH
 export VERDI_HOME="/tools/Synopsys/verdi/verdi/Verdi_O-2018.09-SP2"
-export LD_LIBRARY_PATH="/tools/Synopsys/verdi/verdi/Verdi_O-2018.09-SP2/share/PLI/lib/LINUX64":$LD_LIBRARY_PATH
+# export LD_LIBRARY_PATH="/tools/Synopsys/verdi/verdi/Verdi_O-2018.09-SP2/share/PLI/lib/LINUX64":$LD_LIBRARY_PATH
 export VERDI_DIR="/tools/Synopsys/verdi/verdi/Verdi_O-2018.09-SP2"
 export NOVAS_INST_DIR="/tools/Synopsys/verdi/verdi/Verdi_O-2018.09-SP2"
 export NPI_PLATFORM="LINUX64_GNU_472"
-export LD_LIBRARY_PATH="$NOVAS_INST_DIR/share/NPI/lib/LINUX64_GNU_520":$LD_LIBRARY_PATH
+# export LD_LIBRARY_PATH="$NOVAS_INST_DIR/share/NPI/lib/LINUX64_GNU_520":$LD_LIBRARY_PATH
 export NOVAS_HOME="/tools/Synopsys/verdi/verdi/Verdi_O-2018.09-SP2"
 # LICENSE
 export SNPSLMD_LICENSE_FILE="/tools/Synopsys/License/Synopsys.dat"
 export SNPSLMD_LICENSE_FILE=27000@zhe-pc
 export LM_LICENSE_FILE="/tools/Synopsys/License/Synopsys.dat"
-
-

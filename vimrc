@@ -162,4 +162,4 @@ end
 
 set wrap linebreak
 
-
+au StdinReadPost * set nomodified

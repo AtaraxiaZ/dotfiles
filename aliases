@@ -9,12 +9,8 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# some shortcut for dirctory
-alias dow='cd ~/Downloads'
-alias doc='cd ~/Documents'
+# use autojump for other directories
 alias p='cd ~/projects'
-alias bin='cd ~/bin'
-alias tmp='cd /tmp'
 
 # Synopsys
 alias lmli="/tools/Synopsys/SCL2018/scl/2018.06/linux64/bin/lmgrd -c /usr/stone/software/License/Synopsys.dat"
@@ -37,15 +33,22 @@ if [ -x /usr/bin/dircolors ]; then
 	alias egrep='egrep --color=auto'
 fi
 
-# others
+# git
 alias lg="lazygit"
+alias gstf="git status | nvim - -c 'file .gitstatus'"
+
+# others
 alias clash="clash 1 > /dev/null 2>&1 &"
 alias howdoi="howdoi -a -c"
-alias bat="batcat"
+# If you install bat with apt, uncomment the following line
+# alias bat="batcat"
+alias cat="bat"
+alias man="batman"
 alias trans="trans -brief -t zh -shell"
 alias menyoki="menyoki record"
 alias tldr="tldr -t base16"
 alias less="less -N"
 alias activate="source ~/.virtualenvs/cocotb/bin/activate"
-alias aliyun="ssh -N -R 10024:localhost:22 root@aliyun &"
+alias aliyun="nohup ssh -N -R 10024:localhost:22 root@aliyun &"
 alias outline="Outline &"
+alias f="joshuto"

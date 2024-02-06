@@ -83,8 +83,10 @@ ENABLE_CORRECTION="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting fzf-zsh-plugin)
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
 source $ZSH/oh-my-zsh.sh
+source /usr/share/autojump/autojump.sh
 
 # User configuration
 
@@ -120,3 +122,9 @@ export OPENAI_API_KEY=""
 [[ ! -r /home/zhe/.opam/opam-init/init.zsh ]] || source /home/zhe/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# options list
+setopt HIST_IGNORE_SPACE # Prevent sensitive information from leaking to shell history
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

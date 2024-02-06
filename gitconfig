@@ -1,5 +1,6 @@
 [http]
 	sslVerify = false
+	postBuffer = 1048576000
 [user]
 	email = 904016301@qq.com
 	name = Zhe Li
@@ -28,3 +29,5 @@
 	rebase = true
 [credential]
 	useHttpPath = true
+[https]
+	postBuffer = 1048576000
