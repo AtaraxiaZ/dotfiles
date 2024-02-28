@@ -46,6 +46,6 @@ pacman -Rsu $(comm -23 <(pacman -Qq | sort) <(sort pkglist))
 ```
 sudo apt-get install $(cat pkglist)
 xrgs sudo apt-get install < pkglist
-for i in $(cat pkglist); do sudo apt-get install $i; done  # recommended
+for i in $(cat pkglist); do sudo apt-get install $i; done
 ```
 
