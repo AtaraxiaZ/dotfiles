@@ -1,32 +1,25 @@
 #! /bin/bash
 # This scipts is to setup the symbolic link
 
-bash $HOME/dotfiles/requirments.sh
-
-dotfiles="bashrc aliases zprofile profile yabairc skhdrc exports func extra \
-    zshrc vimrc vim gitconfig gitignore_global gdbinit condarc npmrc"
-files="development"
-configdir="joshuto"
-vscode="keybindings settings"
-vscodepath="$HOME/Library/Application Support/Code/User"
-
-for file in $dotfiles; do
-	[[ ! -L $HOME/."$file" ]] && ln -s $HOME/dotfiles/"$file" $HOME/."$file"
-done
-
-for file in $files; do
-	[[ ! -f $HOME/"$file" ]] && ln -s $HOME/dotfiles/"$file" $HOME/"$file"
-done
-
-for dir in $configdir; do
-	[[ ! -d $HOME/.config/"$dir" ]] && ln -s $HOME/dotfiles/"$dir" $HOME/.config/"$dir"
-done
-
-if [[ -e $vscodepath ]]; then
-	for file in $vscode; do
-		[[ ! -L "$vscodepath/$file".json ]] && ln -s $HOME/dotfiles/vscode/"$file".json "$vscodepath/$file".json
-	done
+# Install required packages
+if [[ $(uname) == "Linux" ]]; then
+	if [[ -n "$(command -v apt)" ]]; then
+		sudo apt update
+		for i in $(cat pkglist); do sudo apt-get install $i; done  # recommended
+	elif [[ -n "$(command -v pacman)" ]]; then
+		sudo pacman -Syu
+		sudo pacman -S --needed --noconfirm - < pkglist
+		pacman -S --needed - < pkglist
+	else
+		echo "Unsupported install command"
+		exit 1
+	fi
+else
+	echo "Unsuppored OS"
+	exit 1
 fi
+
+stow -R git bash zsh i3 joshuto kitty npm skhd tmux vim vscode yabai
 
 # we use oh my zsh
 if [[ ! -d $HOME/.oh-my-zsh ]]; then
