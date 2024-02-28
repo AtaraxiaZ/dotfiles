@@ -128,3 +128,5 @@ setopt HIST_IGNORE_SPACE # Prevent sensitive information from leaking to shell h
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+eval $(thefuck --alias)

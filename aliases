@@ -1,5 +1,5 @@
 # vim and neovim
-alias v="vim"
+alias v="nvim --clean"
 alias nvim="~/opt/nvim"
 alias nv="nvim"
 alias nvconf="nvim ~/.config/nvim/init.lua"
@@ -43,7 +43,7 @@ alias howdoi="howdoi -a -c"
 # If you install bat with apt, uncomment the following line
 # alias bat="batcat"
 alias cat="bat"
-alias man="batman"
+alias bman="batman"
 alias trans="trans -brief -t zh -shell"
 alias menyoki="menyoki record"
 alias tldr="tldr -t base16"
