@@ -7,6 +7,7 @@ stow:
 	stow -R -v git bash zsh i3 joshuto kitty npm skhd tmux vim vscode yabai dev
 
 install:
+	@[ -x "$$(command -v cargo)" ] || curl https://sh.rustup.rs -sSf | sh
 	@if [ "$(UNAME)" = "Linux" ]; then \
         if [ -x "$$(command -v apt)" ]; then \
 			sudo apt update; \

@@ -6,4 +6,4 @@ docker
 vim
 nodejs
 npm
-fzf
+thefuck
