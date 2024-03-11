@@ -23,7 +23,7 @@ install:
     fi
 
 zsh:
-	@if [[ ! -d $$(HOME)/.oh-my-zsh ]]; then \
+	@if [ ! -d $(HOME)/.oh-my-zsh ]; then \
 		cd || exit; \
 		[[ -e $$(HOME)/install.sh ]] || wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh; \
 		sh install.sh; \
@@ -37,7 +37,7 @@ zsh:
 	fi
 
 tmux:
-	@if [[ ! -d $$(HOME)/.tmux ]]; then \
+	@if [ ! -d $(HOME)/.tmux ]; then \
 		cd || exit; \
 		git clone https://github.com/gpakosz/.tmux.git; \
 		ln -s -f .tmux/.tmux.conf . ;\
