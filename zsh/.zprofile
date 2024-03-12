@@ -3,6 +3,7 @@ export PATH=$HOME/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/opt:$PATH
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$HOME/.local/bin:$PATH
 
 # software
 export PATH=$PATH:/usr/local/MATLAB/R2021a/bin

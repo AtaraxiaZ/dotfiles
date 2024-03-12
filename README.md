@@ -49,3 +49,9 @@ xrgs sudo apt-get install < pkglist
 for i in $(cat pkglist); do sudo apt-get install $i; done
 ```
 
+## Tips
+Change default terminal to kitty
+```shell
+sudo apt install kitty -y
+sudo update-alternatives --config x-terminal-emulator
+```
