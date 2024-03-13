@@ -13,6 +13,7 @@ install:
 			sudo apt update; \
 			for i in $$(cat pkglist); do sudo apt-get install -y $$i; done \
 			for i in $$(cat npmlist); do sudo npm install -g $$i; done \
+			for i in $$(cat cargolist); do cargo install $$i; done \
         elif [ -x "$$(command -v pacman)" ]; then \
 			sudo pacman -Syu; \
 			sudo pacman -S --needed --noconfirm - < pkglist; \

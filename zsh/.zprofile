@@ -1,17 +1,15 @@
-# bin file
-export PATH=$HOME/bin:$PATH
-export PATH=$HOME/.cargo/bin:$PATH
-export PATH=$HOME/opt:$PATH
-export PATH=$PATH:/usr/local/go/bin
-export PATH=$HOME/.local/bin:$PATH
-
 # software
-export PATH=$PATH:/usr/local/MATLAB/R2021a/bin
-export PATH=$PATH:$HOME/software/pycharm/bin
+export PATH=/usr/local/MATLAB/R2021a/bin:$PATH
+export PATH=$HOME/software/pycharm/bin:$PATH
 export PATH=$HOME/opt/oss-cad-suite/bin:$PATH
+export PATH=$HOME/anaconda3/bin:$PATH
 
-# python
-export PATH=$PATH:$HOME/anaconda3/bin
+# bin file
+export PATH=/usr/local/go/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
+export PATH=$HOME/bin:$PATH
+export PATH=$HOME/opt:$PATH
 
 # >>> coursier install directory >>>
 export PATH="$PATH:/home/zhe/.local/share/coursier/bin"
