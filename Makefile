@@ -1,7 +1,7 @@
 .PHONY: stow install zsh tmux
 UNAME := $(shell uname)
 
-all: install zsh tmux stow
+all: install zsh tmux stow python
 
 stow:
 	stow -R -v git bash zsh i3 joshuto kitty npm skhd tmux vim vscode yabai dev
@@ -46,3 +46,8 @@ tmux:
 		ln -s -f .tmux/.tmux.conf . ;\
 		ln -s -f dotfiles/tmux.conf.local ./.tmux.conf.local; \
 	fi
+
+python:
+	@[ -x "$$(command -v python3)" ] || sudo apt install python3
+	@sort --output=piplist piplist
+	@for i in $$(cat piplist); do python3 -m pip install $$i; done \

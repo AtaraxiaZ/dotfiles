@@ -1,0 +1,13 @@
+cocotb
+cocotb-bus
+cocotb-test
+cocotbext-axi
+cocotbext-eth
+cppman
+debugpy
+numpy
+pytest
+pyuvm
+scapy
+scipy
+tomli
