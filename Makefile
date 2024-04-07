@@ -50,4 +50,6 @@ tmux:
 python:
 	@[ -x "$$(command -v python3)" ] || sudo apt install python3
 	@sort --output=piplist piplist
-	@for i in $$(cat piplist); do python3 -m pip install $$i; done \
+	@for i in $$(cat piplist); do python3 -m pip install $$i; done
+	@[ -e "$${HOME}/.virtualenvs" ] || mkdir $$HOME/.virtualenvs
+	@[ -e "$${HOME}/.virtualenvs/cocotbenv" ] || python3 -m venv $$HOME/.virtualenvs/cocotbenv

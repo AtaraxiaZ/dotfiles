@@ -1,8 +1,11 @@
 # software
+# high priority
 export PATH=/usr/local/MATLAB/R2021a/bin:$PATH
 export PATH=$HOME/software/pycharm/bin:$PATH
-export PATH=$HOME/opt/oss-cad-suite/bin:$PATH
 export PATH=$HOME/anaconda3/bin:$PATH
+
+# low priority
+export PATH=$PATH:$HOME/opt/oss-cad-suite/bin
 
 # bin file
 export PATH=/usr/local/go/bin:$PATH
