@@ -11,7 +11,7 @@ keymap = [
   { keys = ["ctrl+c"], commands = ["quit"] },
   { keys = ["Q"], commands = ["quit --output-current-directory"] },
 
-  { keys = ["R"], commands = ["reload_dirlist"] },
+  { keys = ["ctrl+r"], commands = ["reload_dirlist"] },
   { keys = ["z", "h"], commands = ["toggle_hidden"] },
   { keys = ["ctrl+h"], commands = ["toggle_hidden"] },
   { keys = ["\t"], commands = ["tab_switch 1"] },
@@ -55,10 +55,10 @@ keymap = [
   { keys = ["l"], commands = ["open"] },
   { keys = ["g", "g"], commands = ["cursor_move_home"] },
   { keys = ["G"], commands = ["cursor_move_end"] },
-  { keys = ["r"], commands = ["open_with"] },
+  { keys = ["o"], commands = ["open_with"] },
 
-  { keys = ["H"], commands = ["cursor_move_page_home"] },
-  { keys = ["L"], commands = ["cursor_move_page_middle"] },
+  { keys = ["H"], commands = ["tab_switch -1"] },
+  { keys = ["L"], commands = ["tab_switch 1"] },
   { keys = ["M"], commands = ["cursor_move_page_end"] },
 
   { keys = ["["], commands = ["parent_cursor_move_up"] },
@@ -82,8 +82,8 @@ keymap = [
   { keys = ["p", "p"], commands = ["paste_files"] },
   { keys = ["p", "o"], commands = ["paste_files --overwrite=true"] },
 
-  { keys = ["a"], commands = ["rename_append"] },
-  { keys = ["A"], commands = ["rename_prepend"] },
+  { keys = ["r"], commands = ["rename_append"] },
+  { keys = ["R"], commands = ["rename_prepend"] },
 
   { keys = ["f", "t"], commands = [":touch "] },
 
@@ -130,6 +130,7 @@ keymap = [
   { keys = ["g", "d"], commands = ["cd ~/Downloads"] },
   { keys = ["g", "e"], commands = ["cd /etc"] },
   { keys = ["g", "h"], commands = ["cd ~/"] },
+  { keys = ["g", "p"], commands = ["cd ~/projects"] },
   { keys = ["?"], commands = ["help"] },
 ]
 
