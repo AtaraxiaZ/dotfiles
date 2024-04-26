@@ -7,23 +7,22 @@ stow:
 	stow -R -v git bash zsh i3 joshuto kitty npm skhd tmux vim vscode yabai dev
 
 install:
-	@[ -x "$$(command -v cargo)" ] || curl https://sh.rustup.rs -sSf | sh
 	@if [ "$(UNAME)" = "Linux" ]; then \
-        if [ -x "$$(command -v apt)" ]; then \
+	    if [ -x "$$(command -v apt)" ]; then \
 			sudo apt update; \
-			for i in $$(cat pkglist); do sudo apt-get install -y $$i; done \
-			for i in $$(cat npmlist); do sudo npm install -g $$i; done \
-			for i in $$(cat cargolist); do cargo install $$i; done \
-        elif [ -x "$$(command -v pacman)" ]; then \
+			for i in $$(cat pkglist); do sudo apt-get install -y $$i; done; \
+	    elif [ -x "$$(command -v pacman)" ]; then \
 			sudo pacman -Syu; \
 			sudo pacman -S --needed --noconfirm - < pkglist; \
-        else \
-            echo "No supported package manager found"; \
-        fi \
-    else \
-        echo "Unsupported operating system"; \
-    fi
-	@[ -x "$$(command -v bat)" ] || (mkdir -p ~/.local/bin && ln -s /usr/bin/batcat ~/.local/bin/bat)
+	    else \
+		echo "No supported package manager found"; \
+	    fi \
+	else \
+	    echo "Unsupported operating system"; \
+	fi
+	@[ -x "$$(command -v batcat)" ] || (mkdir -p $${HOME}/.local/bin && ln -s /usr/bin/batcat $${HOME}/.local/bin/bat)
+	for i in $$(cat npmlist); do sudo npm install -g $$i; done; \
+	for i in $$(cat cargolist); do cargo install $$i; done; \
 
 zsh:
 	@if [ ! -d "$${HOME}/.oh-my-zsh" ]; then \
