@@ -12,9 +12,10 @@ glibc-doc
 libncurses5-dev
 libtinfo5
 libx11-dev
-nodejs
-npm
 pkg-config
+python3.10-venv
+python3-pip
+ripgrep
 stow
 thefuck
 tig

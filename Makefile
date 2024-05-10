@@ -1,7 +1,7 @@
 .PHONY: stow install zsh tmux
 UNAME := $(shell uname)
 
-all: install zsh tmux stow python
+all: install zsh tmux stow python node bin
 
 stow:
 	stow -R -v git bash zsh i3 joshuto kitty npm skhd tmux vim vscode yabai dev
@@ -21,7 +21,6 @@ install:
 	    echo "Unsupported operating system"; \
 	fi
 	@[ -x "$$(command -v batcat)" ] || (mkdir -p $${HOME}/.local/bin && ln -s /usr/bin/batcat $${HOME}/.local/bin/bat)
-	for i in $$(cat npmlist); do sudo npm install -g $$i; done; \
 	for i in $$(cat cargolist); do cargo install $$i; done; \
 
 zsh:
@@ -53,3 +52,10 @@ python:
 	@for i in $$(cat piplist); do python3 -m pip install $$i; done
 	@[ -e "$${HOME}/.virtualenvs" ] || mkdir $$HOME/.virtualenvs
 	@[ -e "$${HOME}/.virtualenvs/cocotbenv" ] || python3 -m venv $$HOME/.virtualenvs/cocotbenv
+
+node:
+	PROFILE=/dev/null bash -c 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash'
+	export NVM_DIR="$${HOME}/.nvm"
+	[ -s "$${NVM_DIR}/nvm.sh" ] && \. "$${NVM_DIR}/nvm.sh"  # This loads nvm
+	nvm install --lts
+	for i in $$(cat npmlist); do sudo npm install -g $$i; done;

@@ -6,19 +6,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Xilinx
-source /tools/Xilinx/Vivado/2023.1/settings64.sh > /dev/null 2>&1
-# 下面这2条会将所有xilinx的那一套编译链加入$PATH中，导致Verilator无法编译
-# source /tools/Xilinx/xilinx-versal-common-v2021.2/versal-common/environment-setup-cortexa72-cortexa53-xilinx-linux
-# source /tools/Xilinx/petalinux-221/settings.sh > /dev/null
-# export PLATFORM_REPO_PATHS=/opt/xilinx/platforms
-# source /fpga/tools/petalinux/v23.1/settings.sh > /dev/null 2>&1
-# If you need aarch64-xilinx toolchains, uncomment the following two lines
-# Caution! Verilator may not find perl correctly when source this script
-# unset LD_LIBRARY_PATH
-# source /opt/petalinux/2023.1/environment-setup-cortexa72-cortexa53-xilinx-linux
-export XILINXD_LICENSE_FILE=27090@eda-lic-45.platform.nlabct.net
-
 # Synopsys
 #export export SYNOPSYS="/tools/Synopsys"
 export VCS_TARGET_ARCH="amd64"
