@@ -1,7 +1,7 @@
 .PHONY: stow install zsh tmux
 UNAME := $(shell uname)
 
-all: install zsh tmux stow python node bin
+all: install zsh tmux stow python node cargo
 
 stow:
 	stow -R -v git bash zsh i3 joshuto kitty npm skhd tmux vim vscode yabai dev
@@ -21,14 +21,13 @@ install:
 	    echo "Unsupported operating system"; \
 	fi
 	@[ -x "$$(command -v batcat)" ] || (mkdir -p $${HOME}/.local/bin && ln -s /usr/bin/batcat $${HOME}/.local/bin/bat)
-	for i in $$(cat cargolist); do cargo install $$i; done; \
 
 zsh:
 	@if [ ! -d "$${HOME}/.oh-my-zsh" ]; then \
 		cd || exit; \
 		[ -e "$${HOME}/install.sh" ] || wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh; \
 		sh install.sh; \
-	else \
+	elif [ ! -d "$${HOME}/.oh-my-zsh/custom/themes/powerlevel10k" ]; then \
 		git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$${ZSH_CUSTOM:-$${HOME}/.oh-my-zsh/custom}"/themes/powerlevel10k; \
 		git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions "$${ZSH_CUSTOM:-$${HOME}/.oh-my-zsh/custom}"/plugins/zsh-autosuggestions; \
 		git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git "$${ZSH_CUSTOM:-$${HOME}/.oh-my-zsh/custom}"/plugins/zsh-syntax-highlighting; \
@@ -59,3 +58,7 @@ node:
 	[ -s "$${NVM_DIR}/nvm.sh" ] && \. "$${NVM_DIR}/nvm.sh"  # This loads nvm
 	nvm install --lts
 	for i in $$(cat npmlist); do sudo npm install -g $$i; done;
+
+cargo:
+	curl https://sh.rustup.rs -sSf | sh
+	. "$$HOME/.cargo/env" && for i in $$(cat cargolist); do cargo install $$i; done; \

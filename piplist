@@ -1,14 +1,14 @@
 cocotb
 cocotb-bus
-cocotb-test
 cocotbext-axi
 cocotbext-eth
+cocotb-test
 cppman
 debugpy
+meson
 numpy
 pytest
 pyuvm
 scapy
 scipy
 tomli
-meson
