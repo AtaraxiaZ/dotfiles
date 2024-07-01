@@ -17,3 +17,7 @@ export PATH=$HOME/opt:$PATH
 # >>> coursier install directory >>>
 export PATH="$PATH:/home/zhe/.local/share/coursier/bin"
 # <<< coursier install directory <<<
+
+# MacOS brew
+[ -f /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"
+

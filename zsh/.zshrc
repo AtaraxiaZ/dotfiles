@@ -86,7 +86,8 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting fzf-zsh-plugin zsh-vi-m
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
 source $ZSH/oh-my-zsh.sh
-source /usr/share/autojump/autojump.sh
+[ -f /usr/share/autojump/autojump.sh ] && . /usr/share/autojump/autojump.sh
+[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 
 # User configuration
 

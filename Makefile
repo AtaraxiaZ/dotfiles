@@ -7,6 +7,7 @@ stow:
 	stow -R -v git bash zsh i3 joshuto kitty npm skhd tmux vim vscode yabai dev
 
 install:
+	@sort --output=pkglist pkglist
 	@if [ "$(UNAME)" = "Linux" ]; then \
 	    if [ -x "$$(command -v apt)" ]; then \
 			sudo apt update; \
@@ -17,10 +18,11 @@ install:
 	    else \
 		echo "No supported package manager found"; \
 	    fi \
+	elif [ "$(UNAME)" = "Darwin" ]; then \
+		for i in $$(cat pkglist); do brew install $$i; done; \
 	else \
 	    echo "Unsupported operating system"; \
 	fi
-	@[ -x "$$(command -v batcat)" ] || (mkdir -p $${HOME}/.local/bin && ln -s /usr/bin/batcat $${HOME}/.local/bin/bat)
 
 zsh:
 	@if [ ! -d "$${HOME}/.oh-my-zsh" ]; then \

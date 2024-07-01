@@ -1,8 +1,8 @@
 cocotb
 cocotb-bus
+cocotb-test
 cocotbext-axi
 cocotbext-eth
-cocotb-test
 cppman
 debugpy
 meson

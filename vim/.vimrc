@@ -17,7 +17,7 @@ set buftype=
 set expandtab " Expand TABs to spaces
 set number
 set background=dark
-set clipboard=unnamedplus
+set clipboard=unnamed
 set notagrelative
 set incsearch
 " set the autocomplete do not use tags
