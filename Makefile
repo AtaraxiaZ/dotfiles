@@ -4,7 +4,7 @@ UNAME := $(shell uname)
 all: install zsh tmux stow python node cargo
 
 stow:
-	stow -R -v git bash zsh i3 joshuto kitty npm skhd tmux vim vscode yabai dev
+	stow -R -v git bash zsh i3 joshuto kitty npm skhd tmux vim vscode yabai dev rclone
 
 install:
 	@sort --output=pkglist pkglist
@@ -64,3 +64,6 @@ node:
 cargo:
 	curl https://sh.rustup.rs -sSf | sh
 	. "$$HOME/.cargo/env" && for i in $$(cat cargolist); do cargo install $$i; done; \
+
+rclone:
+	sudo -v ; curl https://rclone.org/install.sh | sudo bash

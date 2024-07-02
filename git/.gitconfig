@@ -1,12 +1,13 @@
+[includeIf "gitdir:~/projects/personal/"]
+    path = .gitconfig-personal
+[includeIf "gitdir:~/projects/work/"]
+    path = .gitconfig-work
 [http]
 	sslVerify = false
 	postBuffer = 1048576000
-[user]
-	email = 904016301@qq.com
-	name = Zhe Li
 [core]
 	editor = vim
-    excludesfile = ~/.gitignore_global
+    excludesfile = ~/.gitignore-global
 	autocrlf = input
 [alias]
 	graph = log --all --graph --decorate --oneline
