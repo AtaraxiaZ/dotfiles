@@ -1,0 +1,10 @@
+mnt
+tmux new-session -s ic_eda -n "ic_eda" -d
+tmux send-keys -t ic_eda 'ssh ic_eda' C-m
+
+tmux new-window -t ic_eda:2 -n "code" 
+tmux send-keys -t ic_eda:2 "cd ~/projects/work/" C-m
+tmux send-keys -t ic_eda:2 "nv ." C-m
+
+tmux select-window -t ic_eda:2
+tmux attach -t ic_eda
