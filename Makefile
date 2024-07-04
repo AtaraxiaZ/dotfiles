@@ -1,7 +1,7 @@
-.PHONY: stow install zsh tmux
+.PHONY: install zsh tmux stow python node cargo bat 
 UNAME := $(shell uname)
 
-all: install zsh tmux stow python node cargo
+all: install zsh tmux stow python node cargo bat
 
 stow:
 	stow -R -v git bash zsh i3 joshuto kitty npm skhd tmux vim vscode yabai dev rclone
@@ -57,9 +57,8 @@ python:
 node:
 	PROFILE=/dev/null bash -c 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash'
 	export NVM_DIR="$${HOME}/.nvm"
-	[ -s "$${NVM_DIR}/nvm.sh" ] && \. "$${NVM_DIR}/nvm.sh"  # This loads nvm
-	nvm install --lts
-	for i in $$(cat npmlist); do sudo npm install -g $$i; done;
+	[ -s "$${NVM_DIR}/nvm.sh" ] && . "$${NVM_DIR}/nvm.sh" && nvm install --lts
+	for i in $$(cat npmlist); do sudo npm install -g $$i; done; # Bug, can't find npm
 
 cargo:
 	curl https://sh.rustup.rs -sSf | sh
@@ -67,3 +66,9 @@ cargo:
 
 rclone:
 	sudo -v ; curl https://rclone.org/install.sh | sudo bash
+
+bat:
+	mkdir -p ~/.local/bin
+	[ -e $${HOME}/.local/bin/bat ] || ln -s /usr/bin/batcat ~/.local/bin/bat
+	git clone --depth 1 https://github.com/eth-p/bat-extras.git /tmp/bat-extras
+	cd /tmp/bat-extras && sudo ./build.sh --install

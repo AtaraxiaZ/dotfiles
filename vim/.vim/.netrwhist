@@ -1,6 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =7
-let g:netrw_dirhist_7='/Users/bytedance/.config'
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/lizhe/dotfiles'
+let g:netrw_dirhist_7='/home/lizhe/dotfiles/npm'
 let g:netrw_dirhist_6='/home/zhe/.sbt'
 let g:netrw_dirhist_5='/home/zhe/bin'
 let g:netrw_dirhist_4='/etc/profile.d'

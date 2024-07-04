@@ -9,6 +9,8 @@ docker
 fd-find
 feh
 glibc-doc
+lazygit
+libfuse2
 libncurses5-dev
 libtinfo5
 libx11-dev
