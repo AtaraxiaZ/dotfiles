@@ -17,6 +17,7 @@ set buftype=
 set expandtab " Expand TABs to spaces
 set number
 set background=dark
+set backspace=indent,eol,start
 set clipboard=unnamed
 set notagrelative
 set incsearch

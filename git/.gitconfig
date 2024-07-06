@@ -5,10 +5,15 @@
 [http]
 	sslVerify = false
 	postBuffer = 1048576000
+[https]
+	postBuffer = 1048576000
 [core]
 	editor = vim
     excludesfile = ~/.gitignore-global
 	autocrlf = input
+    pager = delta
+[delta]
+    navigate = ture  # use n and N to move between diff sections
 [alias]
 	graph = log --all --graph --decorate --oneline
 	unstage = reset HEAD --
@@ -24,11 +29,12 @@
     prompt = true
 [diff]
     tool = vimdiff
+    colorMoved = default
 [difftool "nvimdiff"]
     cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 [pull]
 	rebase = true
 [credential]
 	useHttpPath = true
-[https]
-	postBuffer = 1048576000
+[merge]
+    conflictstyle = diff3

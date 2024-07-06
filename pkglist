@@ -6,8 +6,11 @@ cmake
 cppman
 curl
 docker
+eza
+fd
 fd-find
 feh
+git-delta
 glibc-doc
 lazygit
 libfuse2
@@ -15,8 +18,8 @@ libncurses5-dev
 libtinfo5
 libx11-dev
 pkg-config
-python3.10-venv
 python3-pip
+python3.10-venv
 ripgrep
 stow
 thefuck
@@ -27,3 +30,4 @@ vim
 wget
 x11-xserver-utils
 zsh
+zoxide

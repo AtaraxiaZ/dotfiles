@@ -1,7 +1,7 @@
-.PHONY: install zsh tmux stow python node cargo bat 
+.PHONY: install zsh tmux stow python node cargo rclone bat 
 UNAME := $(shell uname)
 
-all: install zsh tmux stow python node cargo bat
+all: install zsh tmux stow python node cargo rclone bat
 
 stow:
 	stow -R -v git bash zsh i3 joshuto kitty npm skhd tmux vim vscode yabai dev rclone
@@ -72,3 +72,6 @@ bat:
 	[ -e $${HOME}/.local/bin/bat ] || ln -s /usr/bin/batcat ~/.local/bin/bat
 	git clone --depth 1 https://github.com/eth-p/bat-extras.git /tmp/bat-extras
 	cd /tmp/bat-extras && sudo ./build.sh --install
+
+fzf:
+	git clone https://github.com/junegunn/fzf-git.sh.git "$${HOME}/fzf-git.sh"
