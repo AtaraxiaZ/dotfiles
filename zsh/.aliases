@@ -5,9 +5,9 @@ alias nv="nvim"
 alias nvconf="nvim ~/.config/nvim/init.lua"
 
 # some more ls aliases
-alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions --sort=type"
 alias ll='ls --all'
-alias l='eza --long --all --header --icons --git'
+alias l='eza --long --all --header --icons --git --sort=type'
 
 # use autojump for other directories
 alias p='cd ~/projects'

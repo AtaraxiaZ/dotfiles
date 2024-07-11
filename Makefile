@@ -4,7 +4,7 @@ UNAME := $(shell uname)
 all: install zsh tmux stow python node cargo rclone bat
 
 stow:
-	stow -R -v git bash zsh i3 joshuto kitty npm skhd tmux vim vscode yabai dev rclone
+	stow -R -v git bash zsh i3 joshuto kitty npm skhd tmux vim vscode yabai dev rclone ic
 
 install:
 	@sort --output=pkglist pkglist
