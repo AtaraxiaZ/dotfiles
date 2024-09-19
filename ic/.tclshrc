@@ -1,0 +1,55 @@
+global tcl_interactive tcl_prompt1 tcl_prompt2
+# Configure the prompt according to the actual (non-wish) running
+# First, only bother with a prompt IF it is an interactive shell
+# We may wish to source from other scripts just for convenience
+if {[info exists tcl_interactive] && $tcl_interactive > 0} {
+   set tcl_prompt1 {global tcl_version
+      puts -nonewline "=========\ntclsh$tcl_version > "}
+   set tcl_prompt2 {puts -nonewline "continue > "}
+   if {[info exists itcl::patchLevel]} {
+      set tcl_prompt1 {puts -nonewline "=========\nitclsh$::itcl::patchLevel > "}
+      set tcl_prompt2 {puts -nonewline "continue > "}
+   } elseif [string match exp_version [info command exp_version]] {
+      set tcl_prompt1 {puts -nonewline "========\nexpect[exp_version] > "}
+      set tcl_prompt2 {puts -nonewline "continue > "}
+   } elseif {[info exists tnm(version)]} {
+      set tcl_prompt1 {global tnm
+         puts -nonewline "=========\nscotty$tnm(version) > "}
+      set tcl_prompt2 {puts -nonewline "  continue >  "}
+   } elseif {[llength [info commands pg_connect]] > 0} {
+      regsub {tclsh} $tcl_prompt1 {pgtclsh}
+   }
+}
+
+# Convenience procs
+proc showenv {} {
+   global env
+   foreach k [lsort [array names env]] {
+      puts "$k=\"$env($k)\""
+   }
+}
+
+ proc lspackages {{pattern *}} {
+     # Force the package loader to do its thing:
+     # NOTE: this depends on a side effect of the
+     # built-in [package unknown].  Other [package unknown]
+     # handlers might not meet our expectations.
+     eval [package unknown] Tcl [package provide Tcl]
+     foreach package [lsort [package names]] {
+        if {![string match $pattern $package]} { continue }
+        foreach version [package versions $package] {
+            set present [expr {
+                [string compare $version [package provide $package]]
+              ? " " : "+" }]
+            set ifneeded \
+                [string replace \
+                    [string trim \
+                        [string map {"\n" " " "\t" " "} \
+                            [package ifneeded $package $version]]] \
+                    50 end "..."]
+            puts [format "%1s%-15s %6s %-55s" \
+                $present $package $version $ifneeded]
+        }
+     }
+ }
+

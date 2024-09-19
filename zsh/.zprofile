@@ -11,13 +11,14 @@ export PATH=$PATH:$HOME/opt/oss-cad-suite/bin
 export PATH=/usr/local/go/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
+export PAHT=$HOME/.rvm/bin:$PATH
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/opt:$PATH
 
+
 # >>> coursier install directory >>>
-export PATH="$PATH:/home/zhe/.local/share/coursier/bin"
+export PATH="$PATH:/Users/bytedance/Library/Application Support/Coursier/bin"
 # <<< coursier install directory <<<
 
 # MacOS brew
-[ -f /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"
-
+[[ -f /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"

@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =8
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/private/etc/periodic/daily'
 let g:netrw_dirhist_8='/home/lizhe/dotfiles'
 let g:netrw_dirhist_7='/home/lizhe/dotfiles/npm'
 let g:netrw_dirhist_6='/home/zhe/.sbt'

@@ -11,6 +11,7 @@ alias l='eza --long --all --header --icons --git --sort=type'
 
 # use autojump for other directories
 alias p='cd ~/projects'
+alias w='cd ~/work'
 
 # Synopsys
 alias lmli="/tools/Synopsys/SCL2018/scl/2018.06/linux64/bin/lmgrd -c /usr/stone/software/License/Synopsys.dat"
@@ -49,5 +50,5 @@ alias less="less -N"
 alias activate="source ~/.virtualenvs/cocotb/bin/activate"
 alias aliyun="nohup ssh -N -R 10024:localhost:22 root@aliyun &"
 alias outline="Outline &"
-alias f="joshuto"
+alias f="yazi"
 [ -x "$$(command -v fdfind)" ] && alias fd="fdfind"

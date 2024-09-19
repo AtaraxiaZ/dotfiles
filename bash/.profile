@@ -26,8 +26,9 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+
 # >>> coursier install directory >>>
-export PATH="$PATH:/home/zhe/.local/share/coursier/bin"
+export PATH="$PATH:/Users/bytedance/Library/Application Support/Coursier/bin"
 # <<< coursier install directory <<<
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.

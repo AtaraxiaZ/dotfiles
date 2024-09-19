@@ -3,6 +3,7 @@ bat
 bear
 carg
 cmake
+coreutils
 cppman
 curl
 docker
@@ -18,11 +19,13 @@ libfuse2
 libncurses5-dev
 libtinfo5
 libx11-dev
+ninja
 pkg-config
 python3-pip
 python3.10-venv
 ripgrep
 stow
+tclsh
 thefuck
 tig
 tmux

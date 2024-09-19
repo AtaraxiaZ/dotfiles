@@ -1,6 +1,6 @@
-[includeIf "gitdir:~/projects/personal/"]
+[includeIf "gitdir:~/projects/"]
     path = .gitconfig-personal
-[includeIf "gitdir:~/projects/work/"]
+[includeIf "gitdir:~/work/"]
     path = .gitconfig-work
 [http]
 	sslVerify = false
