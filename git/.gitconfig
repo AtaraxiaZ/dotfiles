@@ -38,3 +38,5 @@
 	useHttpPath = true
 [merge]
     conflictstyle = diff3
+[user]
+	name = Zhe Li

@@ -23,6 +23,7 @@ install:
 	else \
 	    echo "Unsupported operating system"; \
 	fi
+	[-x "$$(command -v fdfind)" ] && ln -s $(which fdfind) ~/.local/bin/fd
 
 zsh:
 	@if [ ! -d "$${HOME}/.oh-my-zsh" ]; then \

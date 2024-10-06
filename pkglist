@@ -15,14 +15,15 @@ git-delta
 glibc-doc
 im-select
 lazygit
+libibverbs-dev
 libfuse2
 libncurses5-dev
 libtinfo5
 libx11-dev
 ninja
 pkg-config
-python3-pip
 python3.10-venv
+python3-pip
 ripgrep
 stow
 tclsh
@@ -34,5 +35,6 @@ vim
 vim
 wget
 x11-xserver-utils
-zsh
+xclip
 zoxide
+zsh
