@@ -21,4 +21,6 @@ export PATH="$PATH:/Users/bytedance/Library/Application Support/Coursier/bin"
 # <<< coursier install directory <<<
 
 # MacOS brew
-[[ -f /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
+[[ -f /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)" && \
+    export PATH=/opt/homebrew/opt/binutils/bin:$PATH
+
