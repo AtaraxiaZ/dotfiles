@@ -14,6 +14,7 @@ fd-find
 feh
 git-delta
 glibc-doc
+graphviz
 im-select
 lazygit
 libibverbs-dev
@@ -32,7 +33,6 @@ thefuck
 tig
 tmux
 tree
-vim
 vim
 wget
 x11-xserver-utils

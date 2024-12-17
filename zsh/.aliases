@@ -35,6 +35,7 @@ fi
 # git
 alias lg="lazygit"
 alias gstf="git status | nvim - -c 'file .gitstatus'"
+alias gfp="git add -u && git commit --amend --no-edit && git push -f"
 
 # others
 alias clash="clash 1 > /dev/null 2>&1 &"
