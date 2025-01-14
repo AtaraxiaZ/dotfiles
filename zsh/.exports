@@ -30,3 +30,7 @@ export NOVAS_HOME="/tools/Synopsys/verdi/verdi/Verdi_O-2018.09-SP2"
 export SNPSLMD_LICENSE_FILE="/tools/Synopsys/License/Synopsys.dat"
 export SNPSLMD_LICENSE_FILE=27000@zhe-pc
 export LM_LICENSE_FILE="/tools/Synopsys/License/Synopsys.dat"
+
+# Homebrew libraries
+export LDFLAGS="-L$(brew --prefix)/opt/libfabric/lib"
+export CPPFLAGS="-I$(brew --prefix)/opt/libfabric/include"

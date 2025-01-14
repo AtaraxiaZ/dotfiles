@@ -1,8 +1,15 @@
+automake
+doxygen
 ffmpeg
 ffmpegthumbnailer
 font-symbols-only-nerd-font
+gdb
+googletest
+gprof2dot
 imagemagick
 jq
+libfabric
+lnav
 poppler
 sevenzip
 yazi
