@@ -1,4 +1,5 @@
 automake
+bazel
 doxygen
 ffmpeg
 ffmpegthumbnailer
@@ -6,6 +7,7 @@ font-symbols-only-nerd-font
 gdb
 googletest
 gprof2dot
+icdiff
 imagemagick
 jq
 libfabric

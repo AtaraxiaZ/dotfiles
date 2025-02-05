@@ -38,3 +38,5 @@
 	useHttpPath = true
 [merge]
     conflictstyle = diff3
+[icdiff]
+	options = --highlight --line-numbers
