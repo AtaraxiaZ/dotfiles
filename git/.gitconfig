@@ -28,10 +28,12 @@
     # git difftool it will automatically launch the difftool
     prompt = true
 [diff]
-    tool = vimdiff
+	tool = bc
     colorMoved = default
 [difftool "nvimdiff"]
     cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+[difftool "bc"]
+	trustExitCode = true
 [pull]
 	rebase = true
 [credential]
