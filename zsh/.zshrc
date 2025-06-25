@@ -155,3 +155,11 @@ done
 unset file
 
 [[ -f ~/.byterc ]] && source ~/.byterc
+
+get() {
+    if [ -z "$1" ]; then
+        echo "Usage: get <IP>"
+        return 1
+    fi
+    orthrus-cli demand "$1" -t 24
+}

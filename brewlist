@@ -7,6 +7,7 @@ ffmpeg
 ffmpegthumbnailer
 font-symbols-only-nerd-font
 gdb
+gflags
 googletest
 gprof2dot
 icdiff
